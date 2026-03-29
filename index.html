@@ -361,6 +361,34 @@
   z-index: -9; 
   pointer-events: none;
 }
+    body {
+  /* Change from a solid gradient to transparent */
+  background: transparent; 
+  color: var(--fg);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+.bg-video {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100vw; 
+  height: 100vh;
+  object-fit: cover; 
+  z-index: -10; 
+  opacity: 1; /* Increase opacity to see the video clearly */
+}
+
+.video-overlay {
+  position: fixed; 
+  inset: 0;
+  /* Lighten this so it doesn't black out the video */
+  background: rgba(0, 0, 0, 0.4); 
+  z-index: -9; 
+  pointer-events: none;
+}
 /* IMPORTANT: Ensure your body/main sections are transparent */
 body, section {
     background-color: transparent !important;
@@ -670,10 +698,9 @@ section {
 </head>
 <body>
   <div class="bg-video-container">
-  <video autoplay loop muted playsinline class="bg-video" id="myBgVideo">
-    <source src="assets/13495-248644905.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+ <video autoplay loop muted playsinline class="bg-video">
+  <source src="assets/13495-248644905.mp4" type="video/mp4">
+</video>
 </div>
 <div class="video-overlay"></div>
 </div>
